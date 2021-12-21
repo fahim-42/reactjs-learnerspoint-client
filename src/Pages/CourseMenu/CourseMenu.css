@@ -1,0 +1,21 @@
+/* .coursemenu-name {
+    -webkit-text-stroke: 0.1px orange;
+} */
+.coursemenu-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+/* Mobile responsive */
+@media only screen and (max-width:688px) {
+    .coursemenu-container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+.coursemenu{
+    /* background-color: rgb(226, 241, 241); */
+}
+/* .coursemenu img{
+    width: 100%;
+    height: 300px;
+} */

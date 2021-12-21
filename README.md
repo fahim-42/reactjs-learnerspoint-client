@@ -1,8 +1,8 @@
 # Learners Point - Language Teaching Institute
 
-This project was built using `html`, `css`, `react`, `react-bootstrap`, `react-router-dom`, `react-router-hash-link`, `node.js`, `express.js`, `mongodb`, `firebase`, `aos` and `redux`.
+This project was built using `HTML`, `CSS`, `Javascript`, `React`, `react-bootstrap`, `react-router-dom`, `react-router-hash-link`, `Node.js`, `Express.js`, `Mongodb`, `f=Firebase`, `AOS`, `React-Redux` and `Redux-Toolkit`.
 
-Visit [Learners Point](https://.web.app/).
+Visit [Learners Point](https://learners-point-client.firebaseapp.com/).
 
 ## Project Features
 

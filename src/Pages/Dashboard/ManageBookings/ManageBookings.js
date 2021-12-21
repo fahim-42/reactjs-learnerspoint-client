@@ -13,7 +13,8 @@ const ManageBookings = () => {
 
         const isBooked = { status };
 
-        const url = `http://localhost:3030/bookings/${id}`;
+        // const url = `http://localhost:3030/bookings/${id}`;
+        const url = `https://hidden-hamlet-39500.herokuapp.com/bookings/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -32,7 +33,8 @@ const ManageBookings = () => {
     }
 
     useEffect(() => {
-        const url = 'http://localhost:3030/bookings';
+        // const url = 'http://localhost:3030/bookings';
+        const url = 'https://hidden-hamlet-39500.herokuapp.com/bookings';
         fetch(url)
             .then(res => res.json())
             .then(data => setManageBooking(data.bookings))
@@ -41,7 +43,8 @@ const ManageBookings = () => {
     const handleDelete = id => {
         const deleteConfirm = window.confirm('Want to delete ?');
         if (deleteConfirm) {
-            const url = `http://localhost:3030/bookings/${id}`;
+            // const url = `http://localhost:3030/bookings/${id}`;
+            const url = `https://hidden-hamlet-39500.herokuapp.com/bookings/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

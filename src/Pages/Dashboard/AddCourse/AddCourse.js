@@ -20,7 +20,8 @@ const AddCourse = () => {
 
         const newCourse = { course, image, fee, level, duration, seat }
 
-        const url = 'http://localhost:3030/courses';
+        // const url = 'http://localhost:3030/courses';
+        const url = 'https://hidden-hamlet-39500.herokuapp.com/courses';
         fetch(url, {
             method: 'POST',
             headers: {

@@ -20,7 +20,8 @@ const Booking = () => {
 
     const [details, setDetails] = useState([]);
     useEffect(() => {
-        const url = `http://localhost:3030/courses?pkg=${id}`;
+        // const url = `http://localhost:3030/courses?pkg=${id}`;
+        const url = `https://hidden-hamlet-39500.herokuapp.com/courses?pkg=${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setDetails(data.queryCourseInfo));
@@ -44,7 +45,8 @@ const Booking = () => {
 
         const bookingInfo = { name, email, course, fee, address, mobile, status };
 
-        const url = 'http://localhost:3030/bookings';
+        // const url = 'http://localhost:3030/bookings';
+        const url = 'https://hidden-hamlet-39500.herokuapp.com/bookings';
         fetch(url, {
             method: 'POST',
             headers: {
@@ -114,7 +116,6 @@ const Booking = () => {
                     <Form.Group as={Col} md="6" controlId="formBasicAddress">
                         <Form.Label>Current Address :</Form.Label>
                         <Form.Control
-                            required
                             type="text"
                             ref={addressRef}
                             placeholder="Local area, street name etc."
@@ -123,7 +124,6 @@ const Booking = () => {
                     <Form.Group as={Col} md="6" controlId="formBasicMobile">
                         <Form.Label>Mobile number :</Form.Label>
                         <Form.Control
-                            required
                             type="number"
                             ref={mobileRef}
                             placeholder="Your mobile number"

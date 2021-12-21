@@ -11,7 +11,8 @@ const MyBookings = () => {
     const [myBooking, setMyBooking] = useState([]);
 
     useEffect(() => {
-        const url = `http://localhost:3030/bookings?email=${email}`;
+        // const url = `http://localhost:3030/bookings?email=${email}`;
+        const url = `https://hidden-hamlet-39500.herokuapp.com/bookings?email=${email}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setMyBooking(data.myBookingInfo))
@@ -21,7 +22,8 @@ const MyBookings = () => {
         const deleteConfirm = window.confirm('Want to delete ?');
         if (deleteConfirm) {
 
-            const url = `http://localhost:3030/bookings/${id}`;
+            // const url = `http://localhost:3030/bookings/${id}`;
+            const url = `https://hidden-hamlet-39500.herokuapp.com/bookings/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

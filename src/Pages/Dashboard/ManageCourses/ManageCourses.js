@@ -5,7 +5,8 @@ const ManageCourses = () => {
     const [manageCourse, setManageCourse] = useState([]);
 
     useEffect(() => {
-        const url = 'http://localhost:3030/courses';
+        // const url = 'http://localhost:3030/courses';
+        const url = 'https://hidden-hamlet-39500.herokuapp.com/courses';
         fetch(url)
             .then(res => res.json())
             .then(data => setManageCourse(data.courses))
@@ -14,7 +15,8 @@ const ManageCourses = () => {
     const handleDelete = id => {
         const deleteConfirm = window.confirm('Want to delete ?');
         if (deleteConfirm) {
-            const url = `http://localhost:3030/courses/${id}`;
+            // const url = `http://localhost:3030/courses/${id}`;
+            const url = `https://hidden-hamlet-39500.herokuapp.com/courses/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

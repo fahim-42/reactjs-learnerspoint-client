@@ -15,7 +15,8 @@ const PostReview = () => {
 
         const userReview = { email, review };
 
-        const url = 'http://localhost:3030/reviews';
+        // const url = 'http://localhost:3030/reviews';
+        const url = 'https://hidden-hamlet-39500.herokuapp.com/reviews';
         fetch(url, {
             method: 'POST',
             headers: {

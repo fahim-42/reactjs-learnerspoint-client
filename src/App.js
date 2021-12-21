@@ -37,17 +37,17 @@ function App() {
 
             <Route path='/dashboard' element={<Dashboard />} >
               <Route path='/dashboard' element={<DashboardHome />} />
-              <Route exact path={'/dashboard/admin'} element={<MakeAdmin />} />
               <Route exact path={'/dashboard/my_bookings'} element={<MyBookings />} />
               <Route exact path={'/dashboard/review'} element={<PostReview />} />
 
               {/* Admin Route */}
-              <Route path={'/dashboard/manage_bookings'} element={<ManageBookings />} />
-              <Route exact path={'/dashboard/manage_courses'} element={<ManageCourses />} />
-              <Route exact path={'/dashboard/add_course'} element={<AddCourse />} />
+              <Route exact path={'/dashboard/admin'} element={<AdminRoute><MakeAdmin /></AdminRoute>} />
+              <Route exact path={'/dashboard/manage_bookings'} element={<AdminRoute><ManageBookings /></AdminRoute>} />
+              <Route exact path={'/dashboard/manage_courses'} element={<AdminRoute><ManageCourses /></AdminRoute>} />
+              <Route exact path={'/dashboard/add_course'} element={<AdminRoute><AddCourse /></AdminRoute>} />
             </Route>
 
-            <Route path='/review' element={<PostReview />} />
+            {/* <Route path='/review' element={<PostReview />} /> */}
             <Route path='/booking/:id' element={<PrivateRoute><Booking /></PrivateRoute>} />
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />

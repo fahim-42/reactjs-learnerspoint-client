@@ -32,7 +32,8 @@ const CourseMenu = () => {
     // without redux
     const [course, setCourse] = useState([]);
     useEffect(() => {
-        const url = 'http://localhost:3030/courses';
+        // const url = 'http://localhost:3030/courses';
+        const url = 'https://hidden-hamlet-39500.herokuapp.com/courses';
         fetch(url)
             .then(res => res.json())
             .then(data => setCourse(data.courses));

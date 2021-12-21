@@ -1,10 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Form } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button'
 import { NavLink, useNavigate } from 'react-router-dom';
 import useAuth from './../../../hooks/useAuth';
 
+// animation
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 const Register = () => {
+
+    //animation
+    useEffect(() => {
+        AOS.init();
+    })
+
     const { user, registerUser, isLoading, authError } = useAuth();
 
     const [loginData, setLoginData] = useState({});
@@ -28,7 +38,7 @@ const Register = () => {
         e.preventDefault();
     }
     return (
-        <div className="col-lg-5 col-sm-6 mx-auto border rounded-3 shadow-lg my-5 p-3">
+        <div className="col-lg-5 col-10 mx-auto border rounded-3 shadow-lg my-5 p-3" data-aos="fade-left" data-aos-duration="3000">
             <h3 className="fw-light fst-italic text-center my-3">User Registration</h3>
             <Form className="px-3" onSubmit={handleRegister}>
                 <Form.Group className="mb-3" controlId="formBasicName">

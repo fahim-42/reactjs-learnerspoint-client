@@ -4,7 +4,17 @@ import Button from 'react-bootstrap/Button'
 import { useParams } from 'react-router';
 import useAuth from './../../hooks/useAuth';
 
+// animation
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 const Booking = () => {
+
+    //animation
+    useEffect(() => {
+        AOS.init();
+    })
+
     const { id } = useParams();
     const { user } = useAuth();
 
@@ -57,7 +67,7 @@ const Booking = () => {
                 <h1>Booking Information</h1>
             </div>
 
-            <Form onSubmit={handleBooking} className="row g-3 mt-3 mx-5 mb-5 px-3 py-4 border border-2 shadow-lg">
+            <Form onSubmit={handleBooking} className="row g-3 mt-3 mx-5 mb-5 px-3 py-4 border border-2 shadow-lg" data-aos="zoom-out" data-aos-duration="3000">
                 <Row className="mb-3">
                     <Form.Group as={Col} md="6" controlId="formBasicName">
                         <Form.Label>Username :</Form.Label>
@@ -107,7 +117,8 @@ const Booking = () => {
                             required
                             type="text"
                             ref={addressRef}
-                            placeholder="Local area, street name etc." />
+                            placeholder="Local area, street name etc."
+                            required />
                     </Form.Group>
                     <Form.Group as={Col} md="6" controlId="formBasicMobile">
                         <Form.Label>Mobile number :</Form.Label>
@@ -115,7 +126,8 @@ const Booking = () => {
                             required
                             type="number"
                             ref={mobileRef}
-                            placeholder="Your mobile number" />
+                            placeholder="Your mobile number"
+                            required />
                     </Form.Group>
                 </Row>
                 <Button variant="warning" type="submit">Book Now</Button>

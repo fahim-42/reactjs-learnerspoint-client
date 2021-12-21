@@ -48,7 +48,8 @@ const AddCourse = () => {
                     <Form.Control
                         type="text"
                         ref={courseRef}
-                        placeholder="Title" />
+                        placeholder="Title"
+                        required />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicImage">
                     <Form.Label>Thumbnail :</Form.Label>
@@ -63,14 +64,16 @@ const AddCourse = () => {
                         <Form.Control
                             type="number"
                             ref={feeRef}
-                            placeholder="Ex: 2500 in tk" />
+                            placeholder="Ex: 2500 in tk"
+                            required />
                     </Form.Group>
                     <Form.Group as={Col} md="6" controlId="formBasicCourseLevel">
                         <Form.Label>Course Level:</Form.Label>
                         <Form.Control
                             type="text"
                             ref={levelRef}
-                            placeholder="Novice/Intermediate/Superior" />
+                            placeholder="Novice/Intermediate/Superior"
+                            required />
                     </Form.Group>
                 </Row>
                 <Row className="mb-3">
@@ -79,7 +82,8 @@ const AddCourse = () => {
                         <Form.Control
                             type="text"
                             ref={durationRef}
-                            placeholder="Format - hh.mm" />
+                            placeholder="Format - hh.mm"
+                            required />
                     </Form.Group>
                     <Form.Group as={Col} md="6" controlId="formBasicCourseSeat">
                         <Form.Label>Course Seat:</Form.Label>

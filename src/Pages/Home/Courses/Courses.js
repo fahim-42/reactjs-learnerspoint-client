@@ -3,7 +3,23 @@ import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import './Courses.css';
 
+// animation
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 const Courses = () => {
+
+    //animation
+    useEffect(() => {
+        AOS.init(
+            /* {
+            offset: 100,
+            duration: 2000,
+            easing: 'ease'
+        } */
+        );
+    })
+
     const [course, setCourse] = useState([]);
     useEffect(() => {
         const url = 'http://localhost:3030/courses';
@@ -19,7 +35,7 @@ const Courses = () => {
             <div className="package-container mx-5">
                 {
                     course?.slice(0, 3).map((pkg) => (
-                        <div key={pkg._id} className="package bg-light mx-3 mb-3 border border-1 rounded-3 shadow-lg">
+                        <div key={pkg._id} className="package bg-light mx-3 mb-3 border border-1 rounded-3 shadow-lg" data-aos="fade-up" data-aos-duration="3000">
                             <img style={{ height: "200px", width: "100%" }} className="p-3" src={pkg.image} alt="" />
                             <h3 className="text-center fw-bold fst-italic">{pkg.course}</h3>
                             <h6 className="text-center my-3">Difficulty: {pkg.level}</h6>

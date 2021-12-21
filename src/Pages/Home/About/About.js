@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Form } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 
+// animation
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 const About = () => {
+
+    //animation
+    useEffect(() => {
+        AOS.init();
+    })
+
     return (
         <div className="mx-auto bg-dark">
             <div className="text-center fst-italic bg-dark text-warning m-0 py-4">
@@ -27,7 +37,7 @@ const About = () => {
                         </ul>
                     </div>
                 </div>
-                <div className="col-lg-4 col-sm-12 border-5 rounded-3 mx-auto shadow-lg bg-white">
+                <div className="col-lg-4 col-sm-12 border-5 rounded-3 mx-auto shadow-lg bg-white" data-aos="fade-up" data-aos-duration="3000">
                     <Form className="mx-3 px-3 mt-3">
                         <Form.Text className="mb-1 text-dark fs-5 fw-bolder fst-italic">
                             Keep up-to-date with our newsletter !?

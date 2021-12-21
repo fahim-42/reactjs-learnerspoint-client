@@ -1,10 +1,20 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Form } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button'
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import useAuth from './../../../hooks/useAuth';
 
+// animation
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 const Login = () => {
+
+    //animation
+    useEffect(() => {
+        AOS.init();
+    })
+
     const [loginData, setLoginData] = useState({});
     const { user, loginUser, signInWithGoogle, isLoading, authError } = useAuth();
 
@@ -27,7 +37,7 @@ const Login = () => {
         signInWithGoogle(location, navigate)
     }
     return (
-        <div className="col-lg-4 col-sm-6 mx-auto border rounded-3 shadow-lg my-5 p-3">
+        <div className="col-lg-4 col-10 mx-auto border rounded-3 shadow-lg my-5 p-3"  data-aos="fade-left" data-aos-duration="3000">
             <h3 className="fw-light fst-italic text-center my-3">User Login</h3>
             <Form className="px-3" onSubmit={handleLoginSubmit}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -65,7 +75,7 @@ const Login = () => {
 
                 <hr />
 
-                <Button variant="info" onClick={handleGoogleSignIn}>Sign in using Google</Button>
+                <Button variant="outline-primary" onClick={handleGoogleSignIn}>Sign in using Google</Button>
             </div>
 
         </div >
